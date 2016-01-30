@@ -13,11 +13,14 @@ namespace EyeZapApp
 			};
 
 			Entry username = new Entry {
-				Placeholder = "your@email.ac.uk"
+				Placeholder = "your@email.ac.uk",
+				Text = "clive",
+				Keyboard = Keyboard.Email
 			};
 
 			Entry password = new Entry {
 				Placeholder = "Password",
+				Text = "password123",
 				IsPassword = true
 			};
 
@@ -26,10 +29,10 @@ namespace EyeZapApp
 			};
 
 			login.Clicked += async (object sender, EventArgs e) => {
-				if(LoginController.Default.Login(username.Text,  password.Text)){
+				if(await LoginController.Default.Login(username.Text,  password.Text)){
 					await DisplayAlert("OK", "YOU'RE IN!", "Belter");
 					Application.Current.MainPage = new NavigationPage(new HomePage()){
-						Padding = new Thickness (5, Device.OnPlatform(20,0,0), 5, 0)
+						Padding = new Thickness (0, 0, 0, 0)
 					};
 				}else{
 					await DisplayAlert("Incorrect Credentials", "Your username and/or password was not reconised", "Try Again");

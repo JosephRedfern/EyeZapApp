@@ -6,17 +6,36 @@ namespace EyeZapApp
 {
 	public class SkillsPage : ContentPage
 	{
+		private ListView SkillsList;
+
 		public SkillsPage ()
 		{
 			Title = "Skills";
 
+
+			SkillsList = new ListView ();
+
+
+			SkillsList.ItemSelected += async (object sender, SelectedItemChangedEventArgs e) => {
+				await Navigation.PushAsync(new SkillPage((string) SkillsList.SelectedItem));
+			};
+
 			Content = new StackLayout { 
 				Children = {
-					new Label { Text = "This is the skills page. Skills related stuff will go here." }
+					SkillsList
 				}
 			};
 		}
-	}
+
+
+		protected async override void OnAppearing ()
+		{
+			base.OnAppearing ();
+
+
+			SkillsList.ItemsSource = await SkillsController.Default.GetSkills ();
+		}
+	}	
 }
 
 

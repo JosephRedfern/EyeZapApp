@@ -5,3 +5,5 @@ EyeZapApp/obj/*
 iOS/.DS_Store
 iOS/bin/*
 iOS/obj/*
+packages/*
+Droid/obj/*

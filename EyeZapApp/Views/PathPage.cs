@@ -12,7 +12,7 @@ namespace EyeZapApp
 
 			Content = new StackLayout { 
 				Children = {
-					new Label { Text = "This, is the path page! Path things belong here." }
+					new Label { Text = "This, is the path page! Path things belong here.\t" }
 				}
 			};
 		}

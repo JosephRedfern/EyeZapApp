@@ -36,12 +36,12 @@ namespace EyeZapApp
 				await Navigation.PushAsync(new PathPage());
 			};
 
-			Button upload = new Button {
-				Text = "Upload Documents"
+			Button assessments = new Button {
+				Text = "Assessments"
 			};
 
-			upload.Clicked += async (object sender, EventArgs e) => {
-				await Navigation.PushAsync(new UploadPage());
+			assessments.Clicked += async (object sender, EventArgs e) => {
+				await Navigation.PushAsync(new AssessmentsPage());
 			};
 
 			Content = new StackLayout {
@@ -49,7 +49,7 @@ namespace EyeZapApp
 					summary,
 					skills,
 					path,
-					upload
+					assessments
 				}
 			};
 		}
