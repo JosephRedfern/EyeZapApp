@@ -1,0 +1,7 @@
+.DS_Store
+Droid/obj/Debug/sdks.cache
+EyeZapApp/bin/*
+EyeZapApp/obj/*
+iOS/.DS_Store
+iOS/bin/*
+iOS/obj/*
