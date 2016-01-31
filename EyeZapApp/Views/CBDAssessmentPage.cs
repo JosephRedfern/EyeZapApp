@@ -66,6 +66,8 @@ namespace EyeZapApp
 						new String[]{"Lactose", "Lots"},
 					});
 				}
+				await DisplayAlert("Assessment Uploaded", "Assessment uploaded and emailed.", "OK");
+				await Navigation.PopToRootAsync();
 			};
 
 			ToolbarItems.Add (uploadButton);

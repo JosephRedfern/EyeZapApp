@@ -29,11 +29,11 @@ namespace EyeZapApp
 			};
 
 			Button path  = new Button {
-				Text = "Path"
+				Text = "Pathology"
 			};
 
 			path.Clicked += async (object sender, EventArgs e) => {
-				await Navigation.PushAsync(new PathPage());
+				await Navigation.PushAsync(new PathListPage());
 			};
 
 			Button assessments = new Button {

@@ -20,13 +20,14 @@ namespace EyeZapApp
 			using(var client = new HttpClient ()){
 				client.BaseAddress = Config.API_ENDPOINT;
 
+				client.DefaultRequestHeaders.Add ("Authorization", String.Format ("Token {0}", LoginController.Default.Token));
+
 				var json = JsonConvert.SerializeObject (new {
 					assessmentId = assessmentId,
 					responses = items
 				});
 
 				HttpContent jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
-				jsonContent.Headers.Add ("Authorization", String.Format ("Token {0}", LoginController.Default.Token));
 
 				var response = await client.PostAsync ("assessments", jsonContent);
 

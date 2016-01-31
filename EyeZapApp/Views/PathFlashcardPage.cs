@@ -4,18 +4,18 @@ using Xamarin.Forms;
 
 namespace EyeZapApp
 {
-	public class SkillFlashcardPage : ContentPage
+	public class PathFlashcardPage : ContentPage
 	{
-		public SkillFlashcardPage (Skill skill)
+		public PathFlashcardPage (Pathology path)
 		{
 			this.Icon = "Edit.png";
 			this.Title = "Flashcards";
 		
 
-			if(skill.flashcards.Count > 0){
+			if(!String.IsNullOrEmpty(path.url)){
 				Image im = new Image { Aspect = Aspect.AspectFit};
 
-				im.Source = ImageSource.FromUri (new Uri (String.Format ("{0}{1}", Config.API_ENDPOINT, skill.flashcards [0].url)));
+				im.Source = ImageSource.FromUri (new Uri (String.Format ("{0}{1}", Config.API_ENDPOINT, path.url)));
 
 				Content = new ScrollView {
 					Content = im

@@ -12,10 +12,14 @@ namespace EyeZapApp
 			this.Title = "Video";
 
 			if (skill.videos.Count > 0) {
+
+
+				HtmlWebViewSource src = new HtmlWebViewSource {
+					Html = String.Format("<!DOCTYPE html><html><body><iframe width=\"100%\" height=\"500px\" src=\"https://www.youtube.com/embed/{0}\" frameborder=\"0\" allowfullscreen></iframe>", skill.videos[0].youtube_id)
+				};
+
 				var videoWebview = new WebView {
-					Source = new UrlWebViewSource {
-						Url = String.Format ("{0}uploads/{1}", Config.API_ENDPOINT, skill.videos [0].url)
-					}
+					Source = src
 				};
 
 				Content = videoWebview;

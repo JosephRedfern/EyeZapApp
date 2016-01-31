@@ -14,6 +14,7 @@ namespace EyeZapApp
 		public int id;
 		public string name;
 		public List<Video> videos;
+		public List<Flashcard> flashcards;
 
 		public override String ToString(){
 			return this.name;
@@ -23,11 +24,15 @@ namespace EyeZapApp
 	public class Video{
 		public int id;
 		public string name;
-		public string url;
+		public string youtube_id;
 
 		public override String ToString(){
 			return this.name;
 		}
+	}
+
+	public class Flashcard{
+		public String url;
 	}
 
 

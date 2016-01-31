@@ -1,10 +1,21 @@
 ﻿<Properties StartupItem="iOS/EyeZapApp.iOS.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.PieFace" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../../Library/Frameworks/Xamarin.iOS.framework/Versions/8.10.4.46/lib/mono/2.1/Xamarin.iOS.Common.targets">
+  <MonoDevelop.Ide.Workbench ActiveDocument="EyeZapApp/Views/SkillVideoPage.cs">
     <Files>
-      <File FileName="EyeZapApp/EyeZapApp.cs" Line="15" Column="16" />
-      <File FileName="EyeZapApp/Views/LoginPage.cs" Line="26" Column="6" />
-      <File FileName="../../../../../Library/Frameworks/Xamarin.iOS.framework/Versions/8.10.4.46/lib/mono/2.1/Xamarin.iOS.Common.targets" Line="1" Column="1" />
+      <File FileName="EyeZapApp/Views/HomePage.cs" Line="38" Column="1" />
+      <File FileName="EyeZapApp/Views/SummaryPage.cs" Line="16" Column="76" />
+      <File FileName="EyeZapApp/Views/SkillsPage.cs" Line="36" Column="40" />
+      <File FileName="EyeZapApp/Views/SkillPage.cs" Line="21" Column="2" />
+      <File FileName="EyeZapApp/Controllers/SkillsController.cs" Line="18" Column="19" />
+      <File FileName="EyeZapApp/Controllers/AssessmentController.cs" Line="36" Column="17" />
+      <File FileName="EyeZapApp/Config.cs" Line="7" Column="79" />
+      <File FileName="EyeZapApp/Controllers/LoginController.cs" Line="42" Column="12" />
+      <File FileName="iOS/Main.cs" Line="17" Column="1" />
+      <File FileName="EyeZapApp/Views/LoginPage.cs" Line="46" Column="1" />
+      <File FileName="EyeZapApp/Views/CBDAssessmentPage.cs" Line="71" Column="35" />
+      <File FileName="EyeZapApp/Views/SkillVideoPage.cs" Line="30" Column="1" />
+      <File FileName="iOS/Entitlements.plist" />
+      <File FileName="EyeZapApp/Views/SkillFlashcardPage.cs" Line="20" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
