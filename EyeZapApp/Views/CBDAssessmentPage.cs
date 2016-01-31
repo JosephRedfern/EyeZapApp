@@ -1,4 +1,5 @@
 ﻿using System;
+using Acr.UserDialogs;
 
 using Xamarin.Forms;
 
@@ -8,10 +9,13 @@ namespace EyeZapApp
 	{
 		public CBDAssessmentPage ()
 		{
+
+			Padding = new Thickness (5, 0, 5, 0);
+
 			Title = "Upload Documents";
-			ToolbarItems.Add (new ToolbarItem () {
-				Text = "Upload"
-			});
+
+
+
 			var clinicalSettingPicker = new Picker ();
 
 			var clinicalOptions = new string[]{ "Outpatient Department", "Emergency Assessment Unit", "Ward" };
@@ -50,6 +54,21 @@ namespace EyeZapApp
 					}
 				}
 			};
+
+			var uploadButton = new ToolbarItem () {
+				Text = "Upload"
+			};
+
+			uploadButton.Clicked += async (object sender, EventArgs e) => {
+				using(Acr.UserDialogs.UserDialogs.Instance.Loading("Uploading Assessment...")){
+					await AssessmentController.Default.Upload(0, new String[][]{
+						new String[]{"Name", "Potato"},
+						new String[]{"Lactose", "Lots"},
+					});
+				}
+			};
+
+			ToolbarItems.Add (uploadButton);
 		}
 
 		public override String ToString(){

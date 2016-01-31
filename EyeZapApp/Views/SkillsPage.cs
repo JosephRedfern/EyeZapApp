@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 using Xamarin.Forms;
 
@@ -17,7 +18,7 @@ namespace EyeZapApp
 
 
 			SkillsList.ItemSelected += async (object sender, SelectedItemChangedEventArgs e) => {
-				await Navigation.PushAsync(new SkillPage((string) SkillsList.SelectedItem));
+				await Navigation.PushAsync(new SkillPage((Skill)SkillsList.SelectedItem));
 			};
 
 			Content = new StackLayout { 
@@ -32,8 +33,11 @@ namespace EyeZapApp
 		{
 			base.OnAppearing ();
 
-
-			SkillsList.ItemsSource = await SkillsController.Default.GetSkills ();
+			if (SkillsList.ItemsSource == null) {
+				using (var a = Acr.UserDialogs.UserDialogs.Instance.Loading ()) {
+					SkillsList.ItemsSource = await SkillsController.Default.GetSkills ();
+				}
+			}
 		}
 	}	
 }

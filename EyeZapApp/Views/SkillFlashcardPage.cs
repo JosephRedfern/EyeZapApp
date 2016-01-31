@@ -6,7 +6,7 @@ namespace EyeZapApp
 {
 	public class SkillFlashcardPage : ContentPage
 	{
-		public SkillFlashcardPage (String skillName)
+		public SkillFlashcardPage (Skill skill)
 		{
 			this.Icon = "Edit.png";
 			this.Title = "Flashcards";

@@ -29,14 +29,18 @@ namespace EyeZapApp
 			};
 
 			login.Clicked += async (object sender, EventArgs e) => {
-				if(await LoginController.Default.Login(username.Text,  password.Text)){
-					await DisplayAlert("OK", "YOU'RE IN!", "Belter");
+				bool result;
+
+				using (var a = Acr.UserDialogs.UserDialogs.Instance.Loading ("Authenticating...")) {
+					result = await LoginController.Default.Login(username.Text,  password.Text);
+				}
+
+				if(result){
 					Application.Current.MainPage = new NavigationPage(new HomePage()){
 						Padding = new Thickness (0, 0, 0, 0)
 					};
 				}else{
 					await DisplayAlert("Incorrect Credentials", "Your username and/or password was not reconised", "Try Again");
-
 				}
 			};
 
